@@ -1,0 +1,48 @@
+﻿@page "/metrics"
+
+@using LMAO_Tema1.Data
+@inject MetricsLogService metricsLogService
+
+<h1>Backend Logs</h1>
+
+<p>This component prints the server action logs.</p>
+
+@if (logs == null)
+{
+    <p><em>Loading Logs...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>ActionType</th>
+                <th>ActionParams</th>
+                <th>ActionResult</th>
+                <th>ActionResponseTime</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in logs)
+            {
+            <tr>
+                <td>@log.Action</td>
+                <td>@log.ActionType</td>
+                <td>@log.ActionParams</td>
+                <td>@log.ActionResult</td>
+                <td>@log.ActionResponseTime</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    MetricsLogEntry[] logs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        logs = await metricsLogService.GetLogListFromFile();
+    }
+}

@@ -1,0 +1,63 @@
+﻿@page "/cat-images"
+
+@using LMAO_Tema1.Data
+@inject CatImageService catImageService
+@inject CatFactService  catFactService
+@inject CatImageAndFactService catImageAndFactService
+
+<h1>Cat Images</h1>
+
+@if (catImage == null)
+{
+    <p><em>Cat Picture Loading...</em></p>
+}
+else
+{
+    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(catImage.ImageData))" style="max-width:50%; max-height:50%;" />
+}
+
+@if (catFact == null)
+{
+    <p><em>Cat Fact Loading...</em></p>
+}
+else
+{
+    <p>@catFact.FactText</p>
+}
+
+@if (catImageAndFact == null)
+{
+    <p><em>Cat Image and Fact Loading...</em></p>
+}
+else
+{
+<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(catImageAndFact.Image))" style="max-width:50%; max-height:50%;" />
+}
+
+<button class="btn btn-primary" @onclick="GetCatImage">Get Cat Data</button>
+
+@code {
+    CatImage catImage;
+    CatFact catFact;
+    CatImageAndFact catImageAndFact;
+
+    string catImageURL = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        catImageURL = await catImageService.GetCatImageURLFromAPI();
+        catImage = await catImageService.LoadCatImageFromURL(catImageURL);
+        catFact = await catFactService.GetCatFactFromAPI();
+
+        catImageAndFact = await catImageAndFactService.GetCatImageAndFact(catImage, catFact);
+    }
+
+    async Task GetCatImage()
+    {
+        catImageURL = await catImageService.GetCatImageURLFromAPI();
+        catImage = await catImageService.LoadCatImageFromURL(catImageURL);
+        catFact = await catFactService.GetCatFactFromAPI();
+
+        catImageAndFact = await catImageAndFactService.GetCatImageAndFact(catImage, catFact);
+    }
+}
