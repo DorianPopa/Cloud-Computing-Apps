@@ -13,6 +13,7 @@ var server = http.createServer(async (request, response) => {
     await router(request, response, routes);
 });
 
-server.listen(8000, () => {
-    console.log('Server is listening on port 8000');
+server.listen(process.env.PORT || 8000, () => {
+    var port = server.address().port;
+    console.log("App now running on port", port);
 });
