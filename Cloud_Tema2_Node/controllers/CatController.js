@@ -78,7 +78,7 @@ class CatController {
         postData = JSON.parse(postData);
         let cat;
         try {
-            cat = await Cat.get({ _id: postData._id }, { _id: 1 });
+            cat = await Cat.get({ _id: param }, { _id: 1 });
         }
         catch(e) {
             console.log(e);
@@ -87,9 +87,9 @@ class CatController {
             return errorHandlers.error(response, 'Conflict - A Cat with the same _id already exists', 409);
         }
         else {
-            let { _id, name, breed, age } = postData;
+            let { name, breed, age } = postData;
             try {
-                cat = await Cat.create({_id, name, breed, age});
+                cat = await Cat.create({"_id" : param, name, breed, age});
                 return errorHandlers.created(response, cat.toClient());
             }
             catch(error) {
