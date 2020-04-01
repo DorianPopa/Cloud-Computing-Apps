@@ -1,0 +1,4 @@
+runtime: nodejs10
+env_variables:
+  BUCKET_PICTURES: uploaded-legit-images-bucket
+  BUCKET_THUMBNAILS: legit-thumbnails-bucket
