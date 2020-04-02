@@ -4,3 +4,7 @@
     padding: 5px;
     padding-bottom: 0px;
 }
+
+.panel-block {
+    flex-wrap: wrap;
+}

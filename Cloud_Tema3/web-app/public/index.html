@@ -48,14 +48,14 @@
 								<div class="image-border" :style="{ 'border-color': pic.color }">
 									<a :href="'/api/images/' + pic.name">
 										<img :src="'/api/thumbnails/' + pic.name">
-                                </a>
+                                	</a>
 								</div>
 								<div class="panel-block">
-								<a v-for="label in pic.labels">
-                                    <span class="tag is-info is-light">
-										{{ label }}
-									</span>
-								</a>
+									<a v-for="label in pic.labels">
+										<span class="tag is-info is-light">
+											{{ label }}
+										</span>
+									</a>
 								</div>
 							</div>
 						</div>
