@@ -53,12 +53,12 @@ app.get('/api/images', async (req, res) => {
 
     const thumbnails = [];
     const imageStore = new Firestore().collection('legit-images');
-    const snapshot = await imageStore.orderBy('created', 'desc').get();
+    const imagesFromDatabase = await imageStore.orderBy('created', 'desc').get();
 
-    if (snapshot.empty) {
+    if (imagesFromDatabase.empty) {
         console.log('No images found');
     } else {
-        snapshot.forEach(doc => {
+        imagesFromDatabase.forEach(doc => {
             const pic = doc.data();
             thumbnails.push({
                 name: doc.id,
@@ -68,7 +68,6 @@ app.get('/api/images', async (req, res) => {
             });
         });
     }
-    console.table(thumbnails);
     res.send(thumbnails);
 });
 
@@ -86,7 +85,7 @@ app.get('/api/thumbnails/:name', async (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log(`Started web frontend service on port ${PORT}`);
-    console.log(`- Images bucket = ${process.env.BUCKET_PICTURES}`);
-    console.log(`- Thumbnails bucket = ${process.env.BUCKET_THUMBNAILS}`);
+    console.log(`${PORT}`);
+    console.log(`${process.env.BUCKET_PICTURES}`);
+    console.log(`${process.env.BUCKET_THUMBNAILS}`);
 });
