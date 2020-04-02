@@ -51,7 +51,7 @@
                                 </a>
 								</div>
 								<a class="panel-block" v-for="label in pic.labels">
-                                    <span class="tag is-info">
+                                    <span class="tag is-info" :style="{ '$tag-background-color': pic.color }">
 										{{ label }}
 									</span>
 								</a>
