@@ -8,3 +8,7 @@
 .panel-block {
     flex-wrap: wrap;
 }
+
+.card-header-title p{
+    overflow: hidden;
+}

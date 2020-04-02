@@ -39,9 +39,11 @@
 				<div class="column is-one-quarter" v-for="pic in images.slice((n-1) * 4, n * 4)">
 					<div class="card">
 						<header class="card-header">
-							<p class="card-header-title">
-							  {{ pic.name }}
-							</p>
+							<div class="card-header-title">
+								<p>
+									{{ pic.name }}
+								</p>
+							</div>
 						</header>
 						<div class="card-content">
 							<div class="content">
