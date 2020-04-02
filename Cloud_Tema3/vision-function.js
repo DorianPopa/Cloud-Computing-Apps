@@ -21,10 +21,7 @@ exports.vision_analysis = async (event, context) => {
   // Prepare the VisionAPI request
   const request = {
     image: { source: { imageUri: `gs://${filebucket}/${filename}` } },
-    features: [
-        { type: 'LABEL_DETECTION' },
-        { type: 'IMAGE_PROPERTIES' }
-    ]
+    features: [ { type: 'LABEL_DETECTION' }, { type: 'IMAGE_PROPERTIES' } ]
   };
 
   // Send the request to VisionAPI
