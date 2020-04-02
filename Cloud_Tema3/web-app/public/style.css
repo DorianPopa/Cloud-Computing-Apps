@@ -9,6 +9,6 @@
     flex-wrap: wrap;
 }
 
-.card-header-title p{
+.card-header-title{
     overflow: hidden;
 }
