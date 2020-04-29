@@ -1,0 +1,18 @@
+.image-border {
+    border-width: 15px;
+    border-style: solid;
+    padding: 5px;
+    padding-bottom: 0px;
+}
+
+.panel-block {
+    flex-wrap: wrap;
+}
+
+.card-header-title{
+    overflow: hidden;
+}
+
+.section{
+    background: azure;
+}

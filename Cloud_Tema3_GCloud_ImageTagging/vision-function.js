@@ -6,7 +6,6 @@
  */
 
 const vision = require('@google-cloud/vision');
-const Storage = require('@google-cloud/storage');
 const Firestore = require('@google-cloud/firestore');
 
 // Init VisionAPI client
@@ -40,6 +39,7 @@ exports.vision_analysis = async (event, context) => {
     const color = response.imagePropertiesAnnotation.dominantColors.colors
         .sort((c1, c2) => c2.score - c1.score)[0].color;
         
+    // Format the color data to be HTML compliant
     const colorHex = '#' +  Number(color.red).toString(16).padStart(2, '0') + 
                             Number(color.green).toString(16).padStart(2, '0') + 
                             Number(color.blue).toString(16).padStart(2, '0');

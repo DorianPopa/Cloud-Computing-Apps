@@ -125,3 +125,60 @@ REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATU
 ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/3ab.jpg 1672 milliseconds
 REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 175 milliseconds
 REQUEST: GET https://memegen.link/custom/Of_all_the_species_of_cats,_the_domestic_cat_is_the_only_species_able_to_hold_its_tail_vertically_while_walking/_All_species_of_wild_cats_hold_their_tail_horizontally_or_tucked_between_their_legs_while_walking..jpg?alt=https://cdn2.thecatapi.com/images/3ab.jpg STATUS CODE: OK 11268 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 1192 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/2vk.jpg 1568 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 687 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 4918 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/MjA1NzQ3OQ.jpg 1749 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 4552 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/MTU5NzU3Ng.jpg 6135 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 844 milliseconds
+REQUEST: GET https://memegen.link/custom/The_oldest_cat_video_on_YouTube_dates_back_to_1894/.jpg?alt=https://cdn2.thecatapi.com/images/MTU5NzU3Ng.jpg STATUS CODE: OK 11058 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 230 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/MTk5OTQ4OQ.jpg 1804 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 245 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 868 milliseconds
+REQUEST: GET https://memegen.link/custom/The_technical_term_for_a_cat’s_hairball_is_a_bezoar/.jpg?alt=https://cdn2.thecatapi.com/images/MTk5OTQ4OQ.jpg STATUS CODE: OK 7816 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/484.jpg 3097 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 197 milliseconds
+REQUEST: GET https://memegen.link/custom/Edward_Lear,_author_of_"The_Owl_and_the_Pussycat",_is_said_to_have_had_his_new_house_in_San_Remo_built_to_exactly_the_same_specification_as_his_previous_residence,_so_that_his_much-loved_tabby,_Foss,_would_immediately_feel_at_home/.jpg?alt=https://cdn2.thecatapi.com/images/484.jpg STATUS CODE: RequestUriTooLong 13548 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 249 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/ad7.jpg 1551 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 179 milliseconds
+REQUEST: GET https://memegen.link/custom/A_cat_can_sprint_at_about_thirty-one_miles_per_hour/.jpg?alt=https://cdn2.thecatapi.com/images/ad7.jpg STATUS CODE: OK 8698 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 246 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/cn0.jpg 2288 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 206 milliseconds
+REQUEST: GET https://memegen.link/custom/The_CIA_spent_US$20_million_in_the_60s_training_cats_to_spy_on_the_Soviets/_The_first_spy_cat_was_hit_by_a_taxi..jpg?alt=https://cdn2.thecatapi.com/images/cn0.jpg STATUS CODE: OK 10180 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 282 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/MTk3OTQ4Ng.jpg 2385 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 180 milliseconds
+REQUEST: GET https://memegen.link/custom/Cats'_eyes_shine_in_the_dark_because_of_the_tapetum,_a_reflective_layer_in_the_eye,_which_acts_like_a_mirror/.jpg?alt=https://cdn2.thecatapi.com/images/MTk3OTQ4Ng.jpg STATUS CODE: OK 10232 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 226 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/bla.jpg 2742 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 220 milliseconds
+REQUEST: GET https://memegen.link/custom/Not_every_cat_gets_"high"_from_catnip/_Whether_or_not_a_cat_responds_to_it_depends_upon_a_recessive_gene:_no_gene,_no_joy..jpg?alt=https://cdn2.thecatapi.com/images/bla.jpg STATUS CODE: OK 12881 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 1557 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/d80.png 2969 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 748 milliseconds
+REQUEST: GET https://memegen.link/custom/A_cat_named_Dusty,_aged_1_7,_living_in_Bonham,_Texas,_USA,_gave_birth_to_her_420th_kitten_on_June_23,_1952/.jpg?alt=https://cdn2.thecatapi.com/images/d80.png STATUS CODE: OK 14897 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 233 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/d0d.jpg 1345 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 178 milliseconds
+REQUEST: GET https://memegen.link/custom/The_first_cat_show_was_in_1871_at_the_Crystal_Palace_in_London/.jpg?alt=https://cdn2.thecatapi.com/images/d0d.jpg STATUS CODE: OK 8028 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 1536 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/2bn.jpg 5077 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 997 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 252 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/MTg3MjI2OQ.jpg 6835 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 261 milliseconds
+REQUEST: GET https://memegen.link/custom/Cats_have_fur/.jpg?alt=https://cdn2.thecatapi.com/images/2bn.jpg STATUS CODE: OK 29025 milliseconds
+REQUEST: GET https://memegen.link/custom/Lil'_Bunny_Sue_Roux_is_a_cat_who_was_born_with_no_front_legs,_and_walks_upright_like_a_kangaroo/_https://www.instagram.com/lilbunnysueroux.jpg?alt=https://cdn2.thecatapi.com/images/MTg3MjI2OQ.jpg STATUS CODE: OK 10965 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 236 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/df3.jpg 1485 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 166 milliseconds
+REQUEST: GET https://memegen.link/custom/Unlike_kittens,_adult_cats_don’t_release_any_particular_key_hormones_during_sleep/_They_snooze_all_day_just_because_they_can._:).jpg?alt=https://cdn2.thecatapi.com/images/df3.jpg STATUS CODE: OK 11680 milliseconds
+REQUEST: GET https://api.thecatapi.com/v1/images/search?mime_types=jpg,png STATUS CODE: OK 345 milliseconds
+ACTION: Load_binary_image_from_URL: https://cdn2.thecatapi.com/images/SVtS3FIQU.jpg 13376 milliseconds
+REQUEST: GET https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1 STATUS CODE: OK 212 milliseconds
+REQUEST: GET https://memegen.link/custom/Approximately_40,000_people_are_bitten_by_cats_in_the_U/S._annually..jpg?alt=https://cdn2.thecatapi.com/images/SVtS3FIQU.jpg STATUS CODE: OK 8364 milliseconds

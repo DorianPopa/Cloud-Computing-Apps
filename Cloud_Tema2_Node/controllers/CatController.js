@@ -4,7 +4,7 @@ const errorHandlers = require('./../util/errorHandlers');
 
 class CatController {
     // GET /cat
-    async get (req, res) {
+    async get (request, response) {
         try {
             const selectParams = {
                 _id: 1,
@@ -15,10 +15,10 @@ class CatController {
 
             let cats = await Cat.getAll({}, selectParams);
 
-            return errorHandlers.success(res, cats);
+            return errorHandlers.success(response, cats);
         }
         catch (error) {
-            return errorHandlers.error(res, error);
+            return errorHandlers.error(response, error);
         }
     }
 

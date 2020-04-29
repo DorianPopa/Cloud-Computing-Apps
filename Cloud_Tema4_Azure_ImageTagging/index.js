@@ -1,9 +1,15 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
-const Firestore = require('@google-cloud/firestore');
 const Promise = require("bluebird");
-const {Storage} = require('@google-cloud/storage');
-const storage = new Storage();
+
+const CosmosClient = require("@azure/cosmos").CosmosClient;
+let CosmosKey = 'a8GGHiJ3tMmIfCN1JQpW7u4kVI1hZSAq66cQxOuNZaKyhMzJEiDmDqs0QIQRO9S4TDktl0NjS8lU4sRn7bwJaw==';
+let CosmosEndpoint = 'https://cosmosdatabaseaccount.documents.azure.com:443/';
+
+const azureStorage = require('azure-storage');
+blobService = azureStorage.createBlobService(cloudcomputingacc, 'yYQgdqIxU2qLLS4TRvH6elCUlnqBksHT6QtlQ9dhL5W1XquGb3NRJ2u5FwQawaStUa2bFmcKup7MZmRRqebpQA==');
+const azureBlobQueryValidator = '?sp=rl&st=2020-04-29T19:49:38Z&se=2021-04-30T19:49:00Z&sv=2019-10-10&sr=c&sig=OxSH5PPhwg156M5pUN2QI0PS2sj%2FEH9qbP0rpBTssd8%3D';
+
 const path = require('path');
 const dayjs = require('dayjs');
 const relativeTime = require('dayjs/plugin/relativeTime')
@@ -24,8 +30,7 @@ app.use(fileUpload({
 
 // POST request to upload a new image. Called from upload.html
 app.post('/api/images', async (req, res) => {
-
-    // Is there a file in the body?
+    // Is there a valid body?
     if (!req.files || Object.keys(req.files).length === 0) {
         console.log("No file uploaded");
         return res.status(400).send('No file was uploaded.');
@@ -38,10 +43,23 @@ app.post('/api/images', async (req, res) => {
     await mv(newImage);
     console.log('File moved in temporary directory');
 
-    // Upload the image to the bucket
-    const imageBucket = storage.bucket(process.env.BUCKET_PICTURES);
-    await imageBucket.upload(newImage, { resumable: false });
-    console.log("Uploaded new image into Cloud Storage");
+    blobService.createBlockBlobFromLocalFile('legit-images', req.files.image.name, newImage, err => {
+        if(err) {
+            handleError(err);
+            return;
+        }
+
+        res.render('success', { 
+            message: 'File uploaded to Azure Blob storage.' 
+        });
+    });
+
+    /*
+        // Upload the image to the bucket
+        const imageBucket = storage.bucket(process.env.BUCKET_PICTURES);
+        await imageBucket.upload(newImage, { resumable: false });
+        console.log("Uploaded new image into Cloud Storage");
+    */
 
     // Return to the main page
     res.redirect('/');
@@ -52,8 +70,16 @@ app.get('/api/images', async (req, res) => {
     console.log('Retrieving list of images');
 
     const thumbnails = [];
-    const imageStore = new Firestore().collection('legit-images');
-    const imagesFromDatabase = await imageStore.orderBy('created', 'desc').get();
+    const DBClient = new CosmosClient({ endpoint: CosmosEndpoint, key: CosmosKey});
+
+    const database = DBClient.database('ImagesDatabase');
+    const container = database.container('ImagesContainer');
+
+    const querySpec = {
+        query: "SELECT * from c ORDER BY c.created DESC"
+    };
+      
+    const { resources: imagesFromDatabase } = await container.items.query(querySpec).fetchAll();
 
     if (imagesFromDatabase.empty) {
         console.log('No images found');
@@ -63,7 +89,7 @@ app.get('/api/images', async (req, res) => {
             thumbnails.push({
                 name: doc.id,
                 labels: pic.labels,
-                color: pic.color,
+                color: pic.color[0],
                 created: dayjs(pic.created.toDate()).fromNow()
             });
         });
@@ -73,19 +99,19 @@ app.get('/api/images', async (req, res) => {
 
 // GET request for the full image from the images bucket
 app.get('/api/images/:name', async (req, res) => {
-    res.redirect(`https://storage.cloud.google.com/${process.env.BUCKET_PICTURES}/${req.params.name}`);
+    res.redirect(`https://cloudcomputingacc.blob.core.windows.net/legit-images/${req.params.name}${azureBlobQueryValidator}`);
 });
 
-// GET request for the thumbnail from the thumbnails bucket
-app.get('/api/thumbnails/:name', async (req, res) => {
-    res.redirect(`https://storage.cloud.google.com/${process.env.BUCKET_THUMBNAILS}/${req.params.name}`);
-});
+/*
+    // GET request for the thumbnail from the thumbnails bucket
+    app.get('/api/thumbnails/:name', async (req, res) => {
+        res.redirect(`https://storage.cloud.google.com/${process.env.BUCKET_THUMBNAILS}/${req.params.name}`);
+    });
+*/
 
 // Init the port to default 8080 or host provided one
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
     console.log(`${PORT}`);
-    console.log(`${process.env.BUCKET_PICTURES}`);
-    console.log(`${process.env.BUCKET_THUMBNAILS}`);
 });

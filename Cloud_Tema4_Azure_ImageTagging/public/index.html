@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LegitApp1337</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+	<section class="hero is-black">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">
+					LegitApp1337
+				</h1>
+			</div>
+		</div>
+        <nav class="navbar has-background-dark" role="navigation" aria-label="main navigation">
+            <div class="navbar-menu">
+                <a class="navbar-item has-text-white" href="/">
+                    Home
+                </a>
+                <a class="navbar-item has-text-white" href="/upload.html">
+                    Upload
+                </a>
+            </div>
+        </nav>
+	</section>
+
+	<section class="section">
+		<div class="container" id="app">
+			<div class="columns" v-for="n in Math.ceil(images.length / 4)">
+				<div class="column is-one-quarter" v-for="pic in images.slice((n-1) * 4, n * 4)">
+					<div class="card">
+						<header class="card-header">
+							<div class="card-header-title">
+								<p>
+									{{ pic.name }}
+								</p>
+							</div>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<div class="image-border" :style="{ 'border-color': pic.color }">
+									<a :href="'/api/images/' + pic.name">
+										<img :src="'/api/images/' + pic.name">
+                                	</a>
+								</div>
+								<div class="panel-block">
+									<a v-for="label in pic.labels">
+										<span class="tag is-dark" style="margin-right: 5px">
+											{{ label }}
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script src="app.js"></script>
+
+</html>

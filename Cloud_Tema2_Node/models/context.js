@@ -9,7 +9,7 @@ connectionInstance.on('error', (err) => {
 });
 
 connectionInstance.once('open', () => {
-    console.log(`MongoDb connected successfully, date is = ${new Date()}`);
+    console.log(`MongoDb connected, date is = ${new Date()}`);
 });
 
 module.exports = connectionInstance;

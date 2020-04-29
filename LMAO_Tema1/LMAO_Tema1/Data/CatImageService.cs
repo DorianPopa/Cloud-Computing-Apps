@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -16,6 +17,9 @@ namespace LMAO_Tema1.Data
 
         public CatImageService()
         {
+            //AppSettingsReader appSettingsReader = new AppSettingsReader();
+            //string APIKEY = (string)appSettingsReader.GetValue("CatImageAPIKey", typeof(string));
+
             httpClient.DefaultRequestHeaders.Add("x-api-key", "ce90be86-0207-4fa3-a11c-52b673d87b9c");
         }
 
