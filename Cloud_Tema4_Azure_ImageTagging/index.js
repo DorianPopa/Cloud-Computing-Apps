@@ -48,10 +48,8 @@ app.post('/api/images', async (req, res) => {
             handleError(err);
             return;
         }
-
-        res.render('success', { 
-            message: 'File uploaded to Azure Blob storage.' 
-        });
+        // Return to the main page
+        res.redirect('/');
     });
 
     /*
@@ -61,8 +59,8 @@ app.post('/api/images', async (req, res) => {
         console.log("Uploaded new image into Cloud Storage");
     */
 
-    // Return to the main page
-    res.redirect('/');
+    
+    
 });
 
 // GET request to return a list of images in JSON format
