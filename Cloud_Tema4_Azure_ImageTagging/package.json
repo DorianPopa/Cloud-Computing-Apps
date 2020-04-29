@@ -1,0 +1,16 @@
+{
+  "name": "web-app",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^3.6.3",
+    "azure-storage": "^2.10.3",
+    "bluebird": "^3.5.0",
+    "dayjs": "^1.8.22",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.6"
+  }
+}

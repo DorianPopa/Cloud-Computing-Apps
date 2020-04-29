@@ -7,7 +7,7 @@ let CosmosKey = 'a8GGHiJ3tMmIfCN1JQpW7u4kVI1hZSAq66cQxOuNZaKyhMzJEiDmDqs0QIQRO9S
 let CosmosEndpoint = 'https://cosmosdatabaseaccount.documents.azure.com:443/';
 
 const azureStorage = require('azure-storage');
-blobService = azureStorage.createBlobService(cloudcomputingacc, 'yYQgdqIxU2qLLS4TRvH6elCUlnqBksHT6QtlQ9dhL5W1XquGb3NRJ2u5FwQawaStUa2bFmcKup7MZmRRqebpQA==');
+blobService = azureStorage.createBlobService('cloudcomputingacc', 'yYQgdqIxU2qLLS4TRvH6elCUlnqBksHT6QtlQ9dhL5W1XquGb3NRJ2u5FwQawaStUa2bFmcKup7MZmRRqebpQA==');
 const azureBlobQueryValidator = '?sp=rl&st=2020-04-29T19:49:38Z&se=2021-04-30T19:49:00Z&sv=2019-10-10&sr=c&sig=OxSH5PPhwg156M5pUN2QI0PS2sj%2FEH9qbP0rpBTssd8%3D';
 
 const path = require('path');
@@ -85,12 +85,11 @@ app.get('/api/images', async (req, res) => {
         console.log('No images found');
     } else {
         imagesFromDatabase.forEach(doc => {
-            const pic = doc.data();
             thumbnails.push({
-                name: doc.id,
-                labels: pic.labels,
-                color: pic.color[0],
-                created: dayjs(pic.created.toDate()).fromNow()
+                name: doc.name,
+                labels: doc.labels,
+                color: doc.color[0],
+                created: doc.created
             });
         });
     }
