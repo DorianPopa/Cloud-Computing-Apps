@@ -59,8 +59,6 @@ app.post('/api/images', async (req, res) => {
         console.log("Uploaded new image into Cloud Storage");
     */
 
-    
-    
 });
 
 // GET request to return a list of images in JSON format
