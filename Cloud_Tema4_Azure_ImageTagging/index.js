@@ -25,7 +25,7 @@ app.use(express.static('public'));
 app.use(fileUpload({
     limits: { fileSize: 10 * 1024 * 1024 },
     useTempFiles : true,
-    tempFileDir : '/tmp/'
+    tempFileDir : './tmp/'
 }))
 
 // POST request to upload a new image. Called from upload.html
@@ -38,7 +38,7 @@ app.post('/api/images', async (req, res) => {
     console.log(`Receiving file ${JSON.stringify(req.files.image)}`);
 
     // Get the file and store it into tmp
-    const newImage = path.resolve('/tmp', req.files.image.name);
+    const newImage = path.resolve('./tmp', req.files.image.name);
     const mv = Promise.promisify(req.files.image.mv);
     await mv(newImage);
     console.log('File moved in temporary directory');

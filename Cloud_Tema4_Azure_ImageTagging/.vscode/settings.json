@@ -1,4 +1,8 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/b31a00d7-f235-4300-8a9e-65bbabd1ed19/resourceGroups/CloudComputingResourceGroup/providers/Microsoft.Web/sites/LegitApp1337",
-    "appService.deploySubpath": ""
+    "appService.deploySubpath": "",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
 }
