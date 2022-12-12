@@ -10,7 +10,7 @@
     "azure-storage": "^2.10.3",
     "bluebird": "^3.5.0",
     "dayjs": "^1.8.22",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-fileupload": "^1.1.6",
     "into-stream": "^5.1.1",
     "multer": "^1.4.2"
